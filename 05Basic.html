@@ -1,0 +1,47 @@
+<!-- getElementById() 
+    – select an element by id.-->
+<html>
+    <head>
+        <title>JavaScript getElementById() Method</title>
+    </head>
+    <body>
+        <p id="message">DOM Manupilation has been started</p>
+    </body>
+</html>
+
+<!-- getElementsByName() – select elements by name.-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript getElementsByName Demo</title>
+</head>
+<body>
+    <p>Please rate the service:</p>
+    <p>
+        <input type="radio" name="rate" value="Very poor"> Very poor
+        <input type="radio" name="rate" value="Poor"> Poor
+        <input type="radio" name="rate" value="OK"> OK
+        <input type="radio" name="rate" value="Good"> Good
+        <input type="radio" name="rate" value="Very Good"> Very Good
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <script>
+        let btn = document.getElementById('btnRate');
+
+        btn.addEventListener('click', () => {
+            let rates = document.getElementsByName('rate');
+            rates.forEach((rate) => {
+                if (rate.checked) {
+                    alert(`You rated: ${rate.value}`);
+                }
+            })
+        });
+    </script>
+</body>
+</html>
+
+
+
